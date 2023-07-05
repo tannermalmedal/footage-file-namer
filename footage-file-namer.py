@@ -1,4 +1,5 @@
 import os
+import shutil
   
 # Parent Directory path
 parent_dir = os.getcwd()
@@ -25,23 +26,9 @@ files.sort(key = os.path.getctime)
 
 # ensure this only happens for mp4 files
 for file in files:
-    counter += 1
-    print(counter)
-    os.rename(file, f'Losers #{counter}.mp4')
-
-  
-
-# for i in range(1,51):
-#     directory = f'Losers #{i}'
-#     path = os.path.join(parent_dir, directory)
-#     os.mkdir(path)
-#     print(directory)
-
-
-
-#for every file
-# for file in files:
-#     curr_name = file.name.split('.') #split files by '.'
-
-#     if curr_name[-1] == 'mkv': #if the last split segment is 'mkv' we know to delete this file
-#         os.remove(file.path)
+    counter += 1 #increment counter for each file
+    directory = f'Losers #{counter}' #folder/dir name that file will go in
+    path = os.path.join(parent_dir, directory) #create the full path
+    os.mkdir(path) #make the directory in the path
+    os.rename(file, f'{directory}.mp4') #renaming the file
+    shutil.move(f'Losers #{counter}.mp4', path) #move file from 
