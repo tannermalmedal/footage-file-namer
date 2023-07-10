@@ -30,5 +30,5 @@ for file in files:
     directory = f'Losers #{counter}' #folder/dir name that file will go in
     path = os.path.join(parent_dir, directory) #create the full path
     os.mkdir(path) #make the directory in the path
-    os.rename(file, f'{directory}.mp4') #renaming the file
-    shutil.move(f'Losers #{counter}.mp4', path) #move file from 
+    os.rename(file, f'Tanner #{counter}.mp4') #renaming the file
+    shutil.move(f'Tanner #{counter}.mp4', path) #move file from 
